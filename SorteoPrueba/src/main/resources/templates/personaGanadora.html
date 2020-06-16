@@ -46,7 +46,7 @@
                             <tr>
                                 <td th:text="${personaGanadora.nroDocumento} ?: ''"></td>
                                 <td th:text="${personaGanadora.tipoDocumento} ?: ''"></td>
-                                <td th:if="(${personaGanadora.nombres} != null and ${personaGanadora.apellidos} != null)" th:text="|${personaGanadora.nombres} '' ${personaGanadora.apellidos}|"></td>
+                                <td th:if="(${personaGanadora.nombres} != null and ${personaGanadora.apellidos} != null)" th:text="|${personaGanadora.nombres} ${personaGanadora.apellidos}|"></td>
                                 <td th:text="${personaGanadora.apellidos} ?: ''"></td>
                                 <td th:text="${personaGanadora.premio.nombre} ?: ''"></td>
                                 <td>
