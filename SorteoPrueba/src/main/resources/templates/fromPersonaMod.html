@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Prueba</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a th:href="@{/}" class="navbar-brand" href="#">
+                <img th:src="@{/img/icon_game.png}" width="30" height="30" alt="">
+                Sorteos Prueba Tecnica
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a th:href="@{/persona/}" class="nav-link" href="#"> Atras</a>
+                </li> 
+            </ul>
+        </nav>
+
+        <div class="container mt-4 vj-destacados">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Modificacíon Persona</h1>
+                    <form method="POST" th:action="@{/persona/guardarModificacion}" th:object="${personaMod}">
+                        <div class="form-group">
+                            <label for="nroDocumento">Numero de Documento</label>
+                            <input type="text" class="form-control" th:field="*{nroDocumento}" id="nroDocumento" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipoDocumento">Tipo de Documento</label>
+                            <input type="text" class="form-control" th:field="*{tipoDocumento}" id="tipoDocumento" placeholder="Tipo de Documento" th:required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombres">Nombres</label>
+                            <input type="text" class="form-control" th:field="*{nombres}" id="nombres" placeholder="Nombres" th:required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" class="form-control" th:field="*{apellidos}" id="apellidos" placeholder="Apellidos" th:required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Fecha de nacimiento</label>
+                            <div class="input-group date" data-date-format="dd/mm/yyyy">
+                                <input  placeholder="dd/mm/yyyy" th:field="*{fechaNacimiento}" id="fechaNacimiento"  type='text' class="form-control">
+                                <div class="input-group-addon" >
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>            
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+        
+        <script type="text/javascript">
+            $('.input-group.date').datepicker({format: "dd/mm/yyyy"});
+        </script>
+    </body>
+</html>
